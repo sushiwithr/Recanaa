@@ -1,0 +1,251 @@
+/* Base styles */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(to bottom right, #fce7f3, #f9a8d4);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Loading screen container */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: opacity 500ms;
+  background: linear-gradient(to bottom right, #fce7f3, #f9a8d4);
+  overflow: hidden;
+}
+
+/* Content container (shown after loading) */
+.content {
+  display: none;
+  max-width: 600px;
+  text-align: center;
+  padding: 2rem;
+}
+
+.content h1 {
+  color: #be185d;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.content p {
+  color: #db2777;
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+}
+
+.content .card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.content .card p {
+  color: #4b5563;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #ec4899;
+  color: white;
+  border: none;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 150ms;
+}
+
+.button:hover {
+  background-color: #db2777;
+}
+
+/* Flower container */
+.flower-container {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+/* Text styles */
+.loading-text {
+  color: #9d174d;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  text-align: center;
+  opacity: 1;
+  transition: opacity 500ms;
+}
+
+/* Animation keyframes */
+@keyframes flowerPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes flowerBurst {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+}
+
+@keyframes flowerZoomFade {
+  0% {
+    transform: scale(1.1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes petalSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animation classes */
+.animate-flower-pulse {
+  animation: flowerPulse 2s ease-in-out infinite;
+}
+
+.animate-flower-burst {
+  animation: flowerBurst 0.5s ease-in-out forwards;
+}
+
+.animate-flower-zoom-fade {
+  animation: flowerZoomFade 0.8s ease-in-out forwards;
+}
+
+.animate-fade-out {
+  animation: fadeOut 0.8s ease-in-out forwards;
+}
+
+.animate-petal-spin {
+  animation: petalSpin 4s linear infinite;
+}
+
+/* Petals styling */
+.petal-spin-container {
+  position: relative;
+}
+
+.petals-layer {
+  position: relative;
+  width: 16rem;
+  height: 16rem;
+}
+
+.middle-petals {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12rem;
+  height: 12rem;
+}
+
+.inner-petals {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 9rem;
+  height: 9rem;
+  z-index: 5;
+}
+
+.petal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8rem;
+  height: 4rem;
+  margin-top: -2rem;
+  margin-left: -4rem;
+  transform-origin: center;
+  border-radius: 60% 80% 80% 60% / 60% 60% 80% 80%;
+  box-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+}
+
+.middle-petal {
+  width: 6rem;
+  height: 2.5rem;
+  margin-top: -1.25rem;
+  margin-left: -3rem;
+  box-shadow: 0 0 8px rgba(236, 72, 153, 0.2);
+}
+
+.inner-petal {
+  width: 4rem;
+  height: 1.75rem;
+  margin-top: -0.875rem;
+  margin-left: -2rem;
+}
+
+.flower-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f472b6, #ec4899);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.flower-center .center-texture {
+  position: absolute;
+  inset: 0.5rem;
+  border-radius: 50%;
+  background: linear-gradient(to bottom right, #fcd34d, #fbbf24);
+  opacity: 0.9;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Recana's Website</title>
+    <meta name="description" content="Contact Recana" />
+    <meta name="author" content="Recana" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted playsinline>
+      <source src="https://sushiwithr.github.io/recana/Sakura Pink Flower Background.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+      <source src="bgm.m4a" type="audio/m4a">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="hobbies.html" class="nav-link">Hobbies</a>
+      <a href="contact.html" class="nav-link active">Contact</a>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="content-container">
+      <div class="page-content">
+        <h1 class="page-title">Contact Me</h1>
+        <p class="text-center mb-8">
+          Feel free to reach out to me through any of the following methods:
+        </p>
+        
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 class="contact-title">Email</h3>
+            <p class="mb-2">For professional inquiries:</p>
+            <a 
+              href="mailto:contact@recana.example" 
+              class="contact-link"
+            >
+              contact@recana.example
+            </a>
+          </div>
+          
+          <div class="contact-card">
+            <h3 class="contact-title">Discord</h3>
+            <p class="mb-2">Chat with me on Discord:</p>
+            <p class="contact-text">recana#1234</p>
+          </div>
+          
+          <div class="contact-card">
+            <h3 class="contact-title">GitHub</h3>
+            <p class="mb-2">Check out my code and projects:</p>
+            <a 
+              href="https://github.com/sushiwithr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="contact-link"
+            >
+              github.com/sushiwithr
+            </a>
+          </div>
+          
+          <div class="contact-card">
+            <h3 class="contact-title">Social Media</h3>
+            <p class="mb-2">Follow me on social platforms:</p>
+            <div class="social-links">
+           
+              <a 
+                href="https://www.instagram.com/rxine.rcn" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="contact-form-container">
+          <h3 class="form-title">Send Me a Message</h3>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="name" class="form-label">Name</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                class="form-input"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="message" class="form-label">Message</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="5"
+                class="form-textarea"
+                required
+              ></textarea>
+            </div>
+            <button 
+              type="submit" 
+              class="form-submit-button"
+            >
+              Send Message
+            </button>
+            <p class="form-note">
+              Note: This is a demo form and doesn't actually send messages.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Music Player -->
+<div class="music-player">
+  <button id="music-toggle" class="music-button">
+    <span id="music-icon">🔊</span>
+  </button>
+  <span class="ml-2 text-sm" id="music-status">Music Off</span>
+</div>
+    
+    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

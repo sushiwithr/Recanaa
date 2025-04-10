@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flower Loading Animation</title>
+  <link rel="stylesheet" href="loading.css" />
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="background-music" src="bgm.m4a" preload="auto" loop></audio>
+
+  <div id="app">
+    <div id="loading-screen" class="loading-screen">
+      <div class="flower-container">
+        <div id="flower" class="animate-flower-pulse">
+          <div id="petal-spin-container" class="petal-spin-container animate-petal-spin">
+            <!-- Outer petals layer -->
+            <div class="petals-layer" id="outer-petals"></div>
+            
+            <!-- Middle petals layer -->
+            <div class="middle-petals" id="middle-petals"></div>
+            
+            <!-- Inner petals layer -->
+            <div class="inner-petals" id="inner-petals"></div>
+            
+            <!-- Center of flower -->
+            <div class="flower-center">
+              <div class="center-texture"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Loading text -->
+      <div id="loading-text" class="loading-text">
+        Loading...
+      </div>
+    </div>
+  </div>
+
+  <!-- Music Player -->
+  <div class="music-player">
+    <button id="music-toggle" class="music-button">
+      <span id="music-icon">🔊</span>
+    </button>
+    <span class="ml-2 text-sm" id="music-status">Music On</span>
+  </div>
+
+  <script>
+    // Create flower elements
+    function createFlower() {
+      const outerPetals = document.getElementById('outer-petals');
+      [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].forEach((rotation, index) => {
+        const petal = document.createElement('div');
+        petal.className = 'petal';
+        petal.style.transform = `rotate(${rotation}deg) translateX(4rem)`;
+        petal.style.background = `rgba(249, 168, 212, ${0.9 - index * 0.02})`;
+        outerPetals.appendChild(petal);
+      });
+
+      const middlePetals = document.getElementById('middle-petals');
+      [15, 45, 75, 105, 135, 165, 195, 225, 255, 285, 315, 345].forEach((rotation, index) => {
+        const petal = document.createElement('div');
+        petal.className = 'petal middle-petal';
+        petal.style.transform = `rotate(${rotation}deg) translateX(3rem)`;
+        petal.style.background = `rgba(244, 114, 182, ${0.85 - index * 0.02})`;
+        middlePetals.appendChild(petal);
+      });
+
+      const innerPetals = document.getElementById('inner-petals');
+      [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330].forEach((rotation, index) => {
+        const petal = document.createElement('div');
+        petal.className = 'petal inner-petal';
+        petal.style.transform = `rotate(${rotation}deg) translateX(2.25rem)`;
+        petal.style.background = `rgba(251, 207, 232, ${0.9 - index * 0.03})`;
+        innerPetals.appendChild(petal);
+      });
+    }
+
+    // Run animation sequence
+    function runLoadingAnimation() {
+      const loadingScreen = document.getElementById('loading-screen');
+      const flower = document.getElementById('flower');
+      const petalSpinContainer = document.getElementById('petal-spin-container');
+      const loadingText = document.getElementById('loading-text');
+
+      // Show loading screen
+      loadingScreen.style.display = 'flex';
+
+      // Reset animations
+      flower.className = 'animate-flower-pulse';
+      petalSpinContainer.className = 'petal-spin-container animate-petal-spin';
+      loadingText.textContent = 'Loading...';
+      loadingText.style.opacity = '1';
+
+      // Run animation sequence
+      setTimeout(() => {
+        loadingText.textContent = 'Ready!';
+        flower.className = 'animate-flower-burst';
+        petalSpinContainer.className = 'petal-spin-container';
+
+        setTimeout(() => {
+          flower.className = 'animate-flower-zoom-fade';
+          loadingText.style.opacity = '0';
+
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 800);
+        }, 300);
+      }, 3000);
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      createFlower();
+      runLoadingAnimation();
+
+      const flower = document.getElementById('flower');
+      const backgroundMusic = document.getElementById('background-music');
+
+      // Resume from last position if previously playing
+      const musicTime = parseFloat(localStorage.getItem('musicTime')) || 0;
+      const wasPlaying = localStorage.getItem('musicPlaying') === 'true';
+
+
+      backgroundMusic.volume = 0.5;
+
+      if (wasPlaying) {
+        backgroundMusic.play().catch(() => {});
+      }
+
+      // On flower click, play music and store state
+      flower.addEventListener('click', () => {
+        backgroundMusic.play();
+        localStorage.setItem('musicPlaying', 'true');
+
+        setInterval(() => {
+          localStorage.setItem('musicTime', backgroundMusic.currentTime);
+        }, 1000);
+      });
+
+      // Save state before leaving
+      window.addEventListener('beforeunload', () => {
+        localStorage.setItem('musicPlaying', !backgroundMusic.paused);
+        localStorage.setItem('musicTime', backgroundMusic.currentTime);
+      });
+
+      // Redirect after a few seconds
+      setTimeout(() => {
+        localStorage.setItem('musicPlaying', !backgroundMusic.paused);
+        localStorage.setItem('musicTime', backgroundMusic.currentTime);
+        sessionStorage.setItem('loadingScreenShown', 'true');
+        window.location.href = 'index.html';
+      }, 4000);
+    });
+  </script>
+
+  <script>
+    // Redirect to index.html after 4 seconds
+    setTimeout(() => {
+      window.location.href = 'index.html';
+    }, 4000); // Adjust the duration as needed
+    // JavaScript
+    </script>
+  </body>
+</html>

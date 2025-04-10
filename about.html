@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About - Recana's Website</title>
+    <meta name="description" content="About Recana" />
+    <meta name="author" content="Recana" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted playsinline>
+      <source src="https://sushiwithr.github.io/recana/Sakura Pink Flower Background.mp4" type="video/mp4">
+    </video>
+    
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+      <source src="bgm.m4a" type="audio/m4a">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link active">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="hobbies.html" class="nav-link">Hobbies</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="content-container">
+      <div class="page-content">
+        <h1 class="page-title">About Me</h1>
+        <div class="space-y-4">
+          <p>
+            Hiii! I am Rian Raine. I am a student with a deep passion for coding and UI/UX design, a journey I started back in grade school. Technology and design have always fascinated me, and I love bringing ideas to life through intuitive and visually appealing digital experiences. I am constantly exploring new trends, tools, and techniques to refine my skills and stay ahead in the ever-evolving world of tech.
+          </p>
+          <p>
+            When I'm not immersed in code, you'll likely find me expressing my creativity in other ways—whether it's sewing and designing unique pieces, crocheting intricate patterns, or diving into the world of romance novels. Reading allows me to escape into different stories and perspectives, while my love for experimenting in the kitchen lets me play with flavors and create new recipes.
+          </p>
+          <p>
+            I believe that learning never stops, and I’m always eager to explore new technologies, challenge myself, and improve in every aspect of my craft. Whether it's designing user-friendly interfaces, working on a new creative project, or simply embracing a new hobby, I strive to push my boundaries and grow every day. Let’s create, innovate, and make something amazing together! 🍓✨
+          </p>
+          <p>
+            My journey in tech began when I was in high school, where I first discovered my love for programming. Since then, I've been continuously learning and expanding my skills in various technologies.
+          </p>
+          <h2 class="section-title">Skills</h2>
+          <div class="skills-container">
+            <img src="me.png" alt="About Me Image" class="skills-image" />
+            <ul class="custom-list">
+              <li>Web Development (HTML, CSS, JavaScript)</li>
+              <li>Front-end Frameworks (React, Vue)</li>
+              <li>Back-end Development (Node.js, Express)</li>
+              <li>Game Development (Unity)</li>
+              <li>Digital Art and Design</li>
+            </ul>
+          </div>
+          <h2 class="section-title">Education</h2>
+          <ul class="custom-list">
+            <li>San Beda College Alabang (2021-Present) - High School</li>
+            <li>De La Salle Santiago Zobel School (2014-2020) - Grade School</li>
+          </ul>
+          <h2 class="section-title">Interests</h2>
+          <ul class="custom-list">
+            <li>Front-end Development</li>
+            <li>User Experience Design</li>
+            <li>Accessibility</li>
+            <li>Web Animation</li>
+            <li>Open Source Projects</li>
+          </ul>
+          <h2 class="section-title">Work Experience</h2>
+          <p>
+            I'm currently working as a freelance developer, collaborating with clients from around the world on various web and gaming projects.
+          </p>
+          <p class="mt-6">
+            Feel free to explore the rest of my website to learn more about my projects and interests!
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Music Player -->
+<div class="music-player">
+  <button id="music-toggle" class="music-button">
+    <span id="music-icon">🔊</span>
+  </button>
+  <span class="ml-2 text-sm" id="music-status">Music Off</span>
+</div>
+    
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+  </body>
+</html>

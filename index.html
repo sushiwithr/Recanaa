@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recana's Website</title>
+    <meta name="description" content="Recana's Personal Website" />
+    <meta name="author" content="Recana" />
+
+    <meta property="og:title" content="Recana's Website" />
+    <meta property="og:description" content="Recana's Personal Website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@recana_example" />
+    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <script>
+      // Redirect to loading.html if it hasn't been shown yet
+      if (!sessionStorage.getItem('loadingScreenShown')) {
+        sessionStorage.setItem('loadingScreenShown', 'true');
+        window.location.href = 'loading.html';
+      }
+    </script>
+
+    <!-- Background Video -->
+    <video id="background-video" autoplay loop muted playsinline>
+      <source src="https://sushiwithr.github.io/recana/Sakura Pink Flower Background.mp4" type="video/mp4">
+    </video>
+
+    <!-- Background Music -->
+    <audio id="background-music" autoplay loop>
+      <source src="bgm.m4a" type="audio/m4a">
+      Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="projects.html" class="nav-link">Projects</a>
+      <a href="hobbies.html" class="nav-link">Hobbies</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="content-container">
+      <div class="page-content text-center">
+        <h1 class="page-title">Rian Raine</h1>
+        <div class="mb-8">
+          <a href="about.html">
+            <img 
+              src="pfp.jpg" 
+              alt="Profile Image" 
+              id="profile-image"
+              class="profile-image"
+            />
+          </a>
+        </div>
+        <p class="mb-4 text-lg">
+          Web Developer & Designer
+        </p>
+        <p class="mb-6">
+          Hii this is her!! Explore the different sections to learn more about me, my projects, hobbies, and how to get in touch.
+        </p>
+        <div class="mt-8 flex-center">
+          <a 
+            href="mailto:rrianraine@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="social-button bg-gray"
+          >
+            Email
+          </a>
+          <a 
+            href="https://www.instagram.com/rxine.rcn" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            class="social-button bg-indigo"
+          >
+         Insta
+          </a>
+        </div>
+      </div>
+    </div>
+    
+   <!-- Music Player -->
+<div class="music-player">
+  <button id="music-toggle" class="music-button">
+    <span id="music-icon">🔊</span>
+  </button>
+  <span class="ml-2 text-sm" id="music-status">Music Off</span>
+</div>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+  </body>
+</html>
